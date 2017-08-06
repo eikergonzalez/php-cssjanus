@@ -270,7 +270,7 @@ class CSSJanus {
 	    } else {
       			$css = preg_replace(self::$patterns['left'], self::$patterns['tmpToken'], $css);
       			$css = preg_replace(self::$patterns['right'], 'left', $css);
-	}
+	    }
     		$css = str_replace(self::$patterns['tmpToken'], 'right', $css);
     		return $css;
 	}
