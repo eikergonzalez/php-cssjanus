@@ -262,15 +262,15 @@ class CSSJanus {
       			mb_internal_encoding("UTF-8");
       			mb_regex_encoding("UTF-8");
       			$css = mb_eregi_replace(
-				trim(rtrim(self::$patterns['left'], 'i'), '/'),
-				self::$patterns['tmpToken'],
-				$css
+				    trim(rtrim(self::$patterns['left'], 'i'), '/'),
+				    self::$patterns['tmpToken'],
+				    $css
 				);
       			$css = mb_eregi_replace(trim(rtrim(self::$patterns['right'], 'i'), '/'), 'left', $css);
 	    } else {
       			$css = preg_replace(self::$patterns['left'], self::$patterns['tmpToken'], $css);
       			$css = preg_replace(self::$patterns['right'], 'left', $css);
-    		}
+	}
     		$css = str_replace(self::$patterns['tmpToken'], 'right', $css);
     		return $css;
 	}
