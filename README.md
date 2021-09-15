@@ -1,45 +1,6 @@
-[![Build Status](https://travis-ci.org/cssjanus/php-cssjanus.svg?branch=master)](https://travis-ci.org/cssjanus/php-cssjanus) [![Packagist](https://img.shields.io/packagist/v/cssjanus/cssjanus.svg?style=flat)](https://packagist.org/packages/cssjanus/cssjanus)
+# CSSJanus PrestaShop fork
 
-# CSSJanus
+This is a fork of [cssjanus/php-cssjanus](https://github.com/cssjanus/php-cssjanus) done in 2018 in order to handle an issue related to https://github.com/cssjanus/php-cssjanus/issues/14. Details on this post: https://github.com/cssjanus/php-cssjanus/pull/13#issuecomment-355574605.
 
-Convert CSS stylesheets between left-to-right and right-to-left.
+This bug has been solved in latest php-cssjanus versions so [we now rely again](https://github.com/PrestaShop/PrestaShop/pull/25847) on the upstream. This repository is consequently archived.
 
-## Basic usage
-
-```php
-$rtlCss = CSSJanus::transform( $ltrCss );
-```
-
-## Advanced usage
-
-``transform( $css, $swapLtrRtlInURL = false, $swapLeftRightInURL = false )``
-
-* ``$css`` (string) Stylesheet to transform
-* ``$swapLtrRtlInURL`` (boolean) Swap 'ltr' and 'rtl' in URLs
-* ``$swapLeftRightInURL`` (boolean) Swap 'left' and 'right' in URLs
-
-### Preventing flipping
-
-Use a ```/* @noflip */``` comment to protect a rule from being changed.
-
-```css
-.rule1 {
-  /* Will be converted to margin-right */
-  margin-left: 1em;
-}
-/* @noflip */
-.rule2 {
-  /* Will be preserved as margin-left */
-  margin-left: 1em;
-}
-```
-
-## Port
-
-This is a PHP port of the Node.js implementation of CSSJanus.
-
-Feature requests and bugs related to the actual CSS transformation or test
-cases of it, should be submitted upstream at
-<https://github.com/cssjanus/cssjanus>.
-
-Upstream releases will be ported here.
